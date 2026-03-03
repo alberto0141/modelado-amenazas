@@ -11,7 +11,16 @@
     "diagrams": [
       {
         "id": 0,
-        "title": "Nuevo diagrama STRIDE",
+        "title": "Sitio web de la biblioteca universitaria",
+        "diagramType": "STRIDE",
+        "placeholder": "Descripción de nuevo diagrama STRIDE",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.0",
+        "cells": []
+      },
+      {
+        "id": 1,
+        "title": "Inicio de sesión del usuario para el sistema de biblioteca universitaria",
         "diagramType": "STRIDE",
         "placeholder": "Descripción de nuevo diagrama STRIDE",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
@@ -19,7 +28,7 @@
         "cells": []
       }
     ],
-    "diagramTop": 1,
+    "diagramTop": 2,
     "reviewer": "Guillermo Vera ",
     "threatTop": 0
   }
