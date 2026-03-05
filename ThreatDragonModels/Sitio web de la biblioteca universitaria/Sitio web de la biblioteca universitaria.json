@@ -286,6 +286,148 @@
                 "repudiation": 0
               }
             }
+          },
+          {
+            "position": {
+              "x": 340,
+              "y": 4
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Sitio web biblioteca"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "42c734f2-6ea4-45ec-ad23-7064fee88bdb"
+                },
+                {
+                  "group": "right",
+                  "id": "a553cedf-2a94-4bee-af51-c82924978c93"
+                },
+                {
+                  "group": "bottom",
+                  "id": "85ae76c4-ed84-42ac-8b1c-dba0517ebc9f"
+                },
+                {
+                  "group": "left",
+                  "id": "d0a4f9f0-50d4-4b0f-b44b-a20e1e5eaf2c"
+                }
+              ]
+            },
+            "id": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
+            "zIndex": 3,
+            "data": {
+              "type": "tm.Process",
+              "name": "Sitio web biblioteca",
+              "description": "El sitio web de la biblioteca \nuniversitaria se ejecutará en un \nservidor Linux con Apache. Este \nservidor será reforzado según el \nestándar de protección de servidores \nde la universidad.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "645568eb-b19a-4606-a6bd-3c205e8a7c77",
+                  "title": "Negación de  servicio ",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service / Denegación de servicio",
+                  "description": "Un atacante podría denegar el \nacceso a usuarios válidos, \nhaciendo que el servidor web \nno esté disponible o sea \ninutilizable temporalmente \npor medio del envío de \nmúltiples peticiones \nsimultaneas.",
+                  "mitigation": "Se utiliza un balanceo de \ncargas en el servidor web. \nSe monitorean las \ndirecciones IP de los \nclientes y al encontrar un \nposible ataque, se bloquea \nel acceso. \nSe considera contratar un \nservicio de VPN para \nocultar la dirección IP \npública a los clientes. \n \nEsta en desarrollo el \nbalanceo de cargas. \nParcialmente mitigada. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "2"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
+            }
           }
         ],
         "description": "a"
@@ -302,6 +444,6 @@
     ],
     "diagramTop": 3,
     "reviewer": "Guillermo Vera ",
-    "threatTop": 2
+    "threatTop": 3
   }
 }
