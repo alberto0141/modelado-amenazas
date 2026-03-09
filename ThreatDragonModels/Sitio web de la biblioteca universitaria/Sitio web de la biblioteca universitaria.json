@@ -732,58 +732,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Data Flow"
-            ],
-            "id": "c1ae9675-38ae-4710-85ed-9b173a1126de",
-            "source": {
-              "cell": "afa88889-f448-4b87-b2d7-c32a30e0b31b",
-              "port": "14018021-cdd3-4b69-9d20-d80402cecd02"
-            },
-            "target": {
-              "cell": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
-              "port": "a553cedf-2a94-4bee-af51-c82924978c93"
-            },
-            "vertices": [
-              {
-                "x": 560,
-                "y": 40
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Queries",
               "description": "instruccion sql enviadas a la base de datos",
               "outOfScope": false,
@@ -828,7 +776,83 @@
               "cell": "afa88889-f448-4b87-b2d7-c32a30e0b31b",
               "port": "14018021-cdd3-4b69-9d20-d80402cecd02"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 490,
+                "y": 140
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Resultados web app query",
+              "description": "datos recuperados desde la base de datos.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "cf8d0c64-1e5a-4451-9dc8-dc5472d5a338",
+                  "title": "ataque man in the midle",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "un atacante podría interceptar las consultas de la base de datos en tránsito y obtener información confidencial, como credenciales de la base de datos, parámetros de consulta o resultados de la consulta (es poco probable ya que el flujo de datos se realiza a través de una red privada",
+                  "mitigation": "aplicar una conexión cifrada al servidor de la base de datos",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": "1"
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Resultados web app query"
+            ],
+            "id": "9df9ac98-dee0-4f98-b3f6-d99bfaa2c362",
+            "source": {
+              "cell": "afa88889-f448-4b87-b2d7-c32a30e0b31b",
+              "port": "14018021-cdd3-4b69-9d20-d80402cecd02"
+            },
+            "target": {
+              "cell": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
+              "port": "a553cedf-2a94-4bee-af51-c82924978c93"
+            },
+            "vertices": [
+              {
+                "x": 570,
+                "y": 80
+              }
+            ]
           },
           {
             "position": {
@@ -957,7 +981,7 @@
           {
             "position": {
               "x": 550,
-              "y": 100
+              "y": 170
             },
             "size": {
               "width": 120,
@@ -1093,6 +1117,6 @@
     ],
     "diagramTop": 3,
     "reviewer": "Guillermo Vera ",
-    "threatTop": 9
+    "threatTop": 10
   }
 }
