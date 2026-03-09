@@ -1544,12 +1544,13 @@
       },
       {
         "id": 2,
-        "title": "Nuevo diagrama STRIDE",
+        "title": "Inicio de sesión del usuario",
         "diagramType": "STRIDE",
         "placeholder": "Descripción de nuevo diagrama STRIDE",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "version": "2.6.0",
-        "cells": []
+        "cells": [],
+        "description": "DFD"
       }
     ],
     "diagramTop": 3,
