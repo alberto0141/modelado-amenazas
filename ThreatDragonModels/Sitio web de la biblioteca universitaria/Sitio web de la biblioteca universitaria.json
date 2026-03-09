@@ -38,6 +38,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "cb82aad2-43ff-4fd8-bce4-5c1196bf3e67",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Bibliotecario",
@@ -158,7 +158,7 @@
               "y": 4
             },
             "size": {
-              "width": 112.5,
+              "width": 110,
               "height": 60
             },
             "attrs": {
@@ -173,6 +173,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -256,7 +257,6 @@
               ]
             },
             "id": "0c389a7f-2134-415d-80b5-0fd8e6dee929",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Usuario",
@@ -289,8 +289,8 @@
           },
           {
             "position": {
-              "x": 340,
-              "y": 4
+              "x": 380,
+              "y": 70
             },
             "size": {
               "width": 60,
@@ -308,6 +308,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -391,7 +392,6 @@
               ]
             },
             "id": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Sitio web biblioteca",
@@ -428,6 +428,537 @@
                 "elevationOfPrivilege": 0
               }
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Web request",
+              "description": "Respuestas recibidas de la aplicacion por parte de los usuarios",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "993bb30d-1752-405d-ae52-ac84a5050639",
+                  "title": "Divulgacion de informacion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "estas solicitudes se transmiten a través de la internet publica y podrían ser interceptadas por un atacante",
+                  "mitigation": "las solicitudes deberían requerir HTTPS/S. Esto proporcionara confidencialidad e integridad. HTTP no debe ser compatible.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Web request"
+            ],
+            "id": "1b423fc8-4130-48ff-849d-aa0fc693b121",
+            "source": {
+              "cell": "0c389a7f-2134-415d-80b5-0fd8e6dee929",
+              "port": "6b175791-f2c3-460e-9256-a445f97050d2"
+            },
+            "target": {
+              "cell": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
+              "port": "d0a4f9f0-50d4-4b0f-b44b-a20e1e5eaf2c"
+            },
+            "vertices": [
+              {
+                "x": 250,
+                "y": -50
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Web Response",
+              "description": "Respuestas enviadas por la aplicacion hacia los usuarios",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "0b5f486c-e986-4308-9383-b319135fbfab",
+                  "title": "Divulgacion de informcion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Estas respustas se transmiten a traves de la internet publica y podrian ser interceptaadas por un atacante",
+                  "mitigation": "Las respuestas deberian requerir HTTPS/S. esto proporcionara confidencialidad e integrgidad. HTTP no debe ser compatible",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Web Response"
+            ],
+            "id": "9395ef08-456d-4fcc-bba2-700cc524c59c",
+            "source": {
+              "cell": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
+              "port": "d0a4f9f0-50d4-4b0f-b44b-a20e1e5eaf2c"
+            },
+            "target": {
+              "cell": "0c389a7f-2134-415d-80b5-0fd8e6dee929",
+              "port": "6b175791-f2c3-460e-9256-a445f97050d2"
+            },
+            "vertices": [
+              {
+                "x": 290,
+                "y": 34
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Web request",
+              "description": "Respuestas recibidas por la aplicacion de los bibliotecarios",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "151f6f1d-2ea5-4bed-be57-88842660abbf",
+                  "title": "El flujo de datos debe utilizar HTTP/S",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Estas solicitudes se transmiten a traves de la internet publica y podrian ser interceptadas por un atacante.",
+                  "mitigation": "las solicitudes deberias requerir HTTPS/S. Esto proporcionara confidencialidad e integridad.hTTP no debe ser compatible",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Web request"
+            ],
+            "id": "85ac052d-e752-44ca-b8e1-ef8a94395380",
+            "source": {
+              "cell": "cb82aad2-43ff-4fd8-bce4-5c1196bf3e67",
+              "port": "6b175791-f2c3-460e-9256-a445f97050d2"
+            },
+            "target": {
+              "cell": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
+              "port": "d0a4f9f0-50d4-4b0f-b44b-a20e1e5eaf2c"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Web response",
+              "description": "Respuestas enviadas por la aplicación hacia los bibliotecarios.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "cf68e3b2-ad38-4816-9cdb-6734912f049a",
+                  "title": "el flujo de datos debe utilizar HTTP/S",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Estas respuestas se transmiten a través de internet publica y podrían ser interceptadas por un atacante",
+                  "mitigation": "las respuestas deben requerir HTTPS/S. esto proporcionara confidencialidad e integridad. HTTP no debe ser compatible",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Web response"
+            ],
+            "id": "5bc67659-fe91-433c-b98e-ae3f1ba08249",
+            "source": {
+              "cell": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
+              "port": "d0a4f9f0-50d4-4b0f-b44b-a20e1e5eaf2c"
+            },
+            "target": {
+              "cell": "cb82aad2-43ff-4fd8-bce4-5c1196bf3e67",
+              "port": "6b175791-f2c3-460e-9256-a445f97050d2"
+            },
+            "vertices": [
+              {
+                "x": 260,
+                "y": 230
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 330,
+              "y": 300
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Paginas"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "14018021-cdd3-4b69-9d20-d80402cecd02"
+                },
+                {
+                  "group": "right",
+                  "id": "d3a25149-5a7f-44aa-922f-b324230f6ec8"
+                },
+                {
+                  "group": "bottom",
+                  "id": "9f9c2a49-44b1-4192-8aee-b60fe5e1523b"
+                },
+                {
+                  "group": "left",
+                  "id": "36f7dcb0-9ee8-4527-b10f-85725745f27f"
+                }
+              ]
+            },
+            "id": "29d57360-5d33-4d13-8bf0-edff55998347",
+            "zIndex": 11,
+            "data": {
+              "type": "tm.Store",
+              "name": "Paginas",
+              "description": "Páginas web leídas desde el disco",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 570,
+              "y": 300
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Lee web app config"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "14018021-cdd3-4b69-9d20-d80402cecd02"
+                },
+                {
+                  "group": "right",
+                  "id": "d3a25149-5a7f-44aa-922f-b324230f6ec8"
+                },
+                {
+                  "group": "bottom",
+                  "id": "9f9c2a49-44b1-4192-8aee-b60fe5e1523b"
+                },
+                {
+                  "group": "left",
+                  "id": "36f7dcb0-9ee8-4527-b10f-85725745f27f"
+                }
+              ]
+            },
+            "id": "afa88889-f448-4b87-b2d7-c32a30e0b31b",
+            "zIndex": 12,
+            "data": {
+              "type": "tm.Store",
+              "name": "Lee web app config",
+              "description": "Archivo de la configuración leído desde el disco",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
           }
         ],
         "description": "a"
@@ -444,6 +975,6 @@
     ],
     "diagramTop": 3,
     "reviewer": "Guillermo Vera ",
-    "threatTop": 3
+    "threatTop": 7
   }
 }
