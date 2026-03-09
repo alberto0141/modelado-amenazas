@@ -713,9 +713,127 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "c1ae9675-38ae-4710-85ed-9b173a1126de",
+            "source": {
+              "cell": "afa88889-f448-4b87-b2d7-c32a30e0b31b",
+              "port": "14018021-cdd3-4b69-9d20-d80402cecd02"
+            },
+            "target": {
+              "cell": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
+              "port": "a553cedf-2a94-4bee-af51-c82924978c93"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 40
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Queries",
+              "description": "instruccion sql enviadas a la base de datos",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "426ab391-be52-4faa-b033-4c4db15dfb04",
+                  "title": "Ataque man in the middle",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "un atacnte podria interceptar las consultas de la base de datos en transito y  obtener informaacion confidencial, como credenciales de la base de datos, parametros de consulta o resultados de la consulta (es poco probable ya que el flujo de la base de datos se realiza a traves de una red privada).",
+                  "mitigation": "aplicar una conexion cifrada en el servidor de la bd",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Queries"
+            ],
+            "id": "2de3ee8f-e1a7-4264-86a9-0afe43ee76d7",
+            "source": {
+              "cell": "82bc7ef6-4340-4c03-a303-e6c374f082b3",
+              "port": "a553cedf-2a94-4bee-af51-c82924978c93"
+            },
+            "target": {
+              "cell": "afa88889-f448-4b87-b2d7-c32a30e0b31b",
+              "port": "14018021-cdd3-4b69-9d20-d80402cecd02"
+            },
+            "vertices": []
+          },
+          {
             "position": {
-              "x": 330,
-              "y": 300
+              "x": 340,
+              "y": 280
             },
             "size": {
               "width": 120,
@@ -838,8 +956,8 @@
           },
           {
             "position": {
-              "x": 570,
-              "y": 300
+              "x": 550,
+              "y": 100
             },
             "size": {
               "width": 120,
@@ -975,6 +1093,6 @@
     ],
     "diagramTop": 3,
     "reviewer": "Guillermo Vera ",
-    "threatTop": 7
+    "threatTop": 9
   }
 }
