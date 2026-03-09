@@ -1136,11 +1136,13 @@
                 "text": "BD"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1237,7 +1239,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
@@ -1256,17 +1258,32 @@
                   "new": false,
                   "number": 12,
                   "score": ""
+                },
+                {
+                  "id": "d9b7f98f-09a8-4fc2-b743-353a2600a504",
+                  "title": "robo de credenciales",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "un atacante podria obtener las credenciales de la base de datos y utilizarlas para realizar consultas no autorizadas",
+                  "mitigation": "utilize un firewall para restringir el acceso a la base de datos unicamente a la direccion ip del trabajador en segundo plano",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": "2"
                 }
               ],
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 0
               }
             },
             "tools": {
               "items": [
+                "boundary",
+                "button-remove",
                 "boundary",
                 "button-remove"
               ],
@@ -1288,6 +1305,6 @@
     ],
     "diagramTop": 3,
     "reviewer": "Guillermo Vera ",
-    "threatTop": 12
+    "threatTop": 13
   }
 }
