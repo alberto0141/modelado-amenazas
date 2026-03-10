@@ -1553,7 +1553,7 @@
           {
             "position": {
               "x": 30,
-              "y": 10
+              "y": 170
             },
             "size": {
               "width": 112.5,
@@ -1687,8 +1687,8 @@
           },
           {
             "position": {
-              "x": 430,
-              "y": 0
+              "x": 380,
+              "y": 130
             },
             "size": {
               "width": 60,
@@ -1893,6 +1893,78 @@
               "port": "0d57db43-944f-4dbb-882e-a4c81e7268ba"
             },
             "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "web request",
+              "description": "respuestas recibidad por la plicacion por parte de los usuarios",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "f2d98afd-55c0-4ee9-96c1-40c1904d8f15",
+                  "title": "el flujo de datos debe usar HTTP/S",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure / Brecha de información",
+                  "description": "estas solicitudes se transmiten a través de la internet publica y podrían ser interceptadas por un atacante",
+                  "mitigation": "las solicitudes deberán requerir HTTP/S. esto proporcionara confidencialidad e integridad. HTTP no debe ser compatible.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": "3"
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "web request"
+            ],
+            "id": "bc59baf9-247b-484e-b269-edf827aa15bd",
+            "source": {
+              "cell": "d801854e-62c1-455e-98c2-0614ebb7ee34",
+              "port": "0d57db43-944f-4dbb-882e-a4c81e7268ba"
+            },
+            "target": {
+              "cell": "2d9e1c6a-69e2-4201-950b-598875651f2a",
+              "port": "80461994-091a-4c17-9c31-4675e8f5e2f9"
+            },
+            "vertices": [
+              {
+                "x": 240,
+                "y": 110
+              }
+            ]
           }
         ],
         "description": "DFD"
@@ -1900,6 +1972,6 @@
     ],
     "diagramTop": 3,
     "reviewer": "Guillermo Vera ",
-    "threatTop": 17
+    "threatTop": 18
   }
 }
