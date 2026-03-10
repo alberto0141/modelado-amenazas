@@ -1892,7 +1892,12 @@
               "cell": "d801854e-62c1-455e-98c2-0614ebb7ee34",
               "port": "0d57db43-944f-4dbb-882e-a4c81e7268ba"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 280,
+                "y": 220
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -1961,10 +1966,206 @@
             },
             "vertices": [
               {
-                "x": 240,
-                "y": 110
+                "x": 250,
+                "y": 160
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "usuario autenticado",
+              "description": "credenciales del usuario autenticado",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "0c6a3d85-5c09-44b5-b3af-e3c6cef5baa6",
+                  "title": "inyeccion de codigo",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering / Manipulación",
+                  "description": "un atacante podria enviar una entrada inyectando codigo maliciosos para intentar obtener privilegios",
+                  "mitigation": "1. Se aplican \nverificaciones de tipo, \nformato, longitud y \nrango de datos. \n2. Todos los datos \nenviados desde el \ncliente se validan. \n3. Ninguna decisión de \nseguridad se basa en \nparámetros (por \nejemplo, parámetros de \nURL) que se pueden \nmanipular \n. 4. Filtrado de entrada \nmediante validación de \nlista de permitidos. se \nutiliza \n5. Se utiliza \ncodificación de salida ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": "3"
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "usuario autenticado"
+            ],
+            "id": "a416fb9f-8a6e-4cc6-a79c-a69893f60450",
+            "source": {
+              "cell": "d801854e-62c1-455e-98c2-0614ebb7ee34",
+              "port": "0d57db43-944f-4dbb-882e-a4c81e7268ba"
+            },
+            "target": {
+              "cell": "2d9e1c6a-69e2-4201-950b-598875651f2a",
+              "port": "80461994-091a-4c17-9c31-4675e8f5e2f9"
+            },
+            "vertices": [
+              {
+                "x": 230,
+                "y": 120
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 40,
+              "y": 340
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "vistas"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "62ba0c49-6424-47a4-98a8-fdc4089a8b07"
+                },
+                {
+                  "group": "right",
+                  "id": "3da0d86a-5c35-4721-abf3-ad2513923962"
+                },
+                {
+                  "group": "bottom",
+                  "id": "eb326d9f-14c5-4080-b2da-929902e46ba8"
+                },
+                {
+                  "group": "left",
+                  "id": "9303768e-78e7-435b-a755-d01694480ff8"
+                }
+              ]
+            },
+            "id": "c4b9f616-01c3-48ee-b812-73dcd9abfa66",
+            "zIndex": 11,
+            "data": {
+              "type": "tm.Store",
+              "name": "vistas",
+              "description": "paginas web leidas desde el disco duro",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
           }
         ],
         "description": "DFD"
@@ -1972,6 +2173,6 @@
     ],
     "diagramTop": 3,
     "reviewer": "Guillermo Vera ",
-    "threatTop": 18
+    "threatTop": 19
   }
 }
