@@ -2044,6 +2044,58 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "usuario autenticado resultado",
+              "description": "Este flujo de datos representa una \nacción dentro del controlador. ",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "usuario autenticado resultado"
+            ],
+            "id": "4aaf0a21-8338-4176-9c40-b55d9e8f64a4",
+            "source": {
+              "cell": "2d9e1c6a-69e2-4201-950b-598875651f2a",
+              "port": "dc6e3887-34cd-4f6f-847a-95c71b745c19"
+            },
+            "target": {
+              "cell": "d801854e-62c1-455e-98c2-0614ebb7ee34",
+              "port": "0d57db43-944f-4dbb-882e-a4c81e7268ba"
+            },
+            "vertices": [
+              {
+                "x": 270,
+                "y": 270
+              }
+            ]
+          },
+          {
             "position": {
               "x": 40,
               "y": 340
