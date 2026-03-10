@@ -1825,16 +1825,74 @@
                 "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "web response",
+              "description": "respuestas enviadas por la aplicacion hacia los usuarios",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "df8d90b9-e77f-4c8c-a4c2-46f1df3e765e",
+                  "title": "el flujo de datos debe utilizar hTTP/S",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure / Brecha de información",
+                  "description": "estas respuestas se transmiten a través de la internet publica y podrían ser interceptadas por un atacante",
+                  "mitigation": "las respuestas deberian requerir HTTP/S esto proporcionara confidencialidad e integridad. HTTP no debe ser compatible",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": "3"
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "web response"
+            ],
+            "id": "d7daa9b6-f129-47e3-9f48-9617e9f0cc3d",
+            "source": {
+              "cell": "2d9e1c6a-69e2-4201-950b-598875651f2a",
+              "port": "80461994-091a-4c17-9c31-4675e8f5e2f9"
+            },
+            "target": {
+              "cell": "d801854e-62c1-455e-98c2-0614ebb7ee34",
+              "port": "0d57db43-944f-4dbb-882e-a4c81e7268ba"
+            },
+            "vertices": []
           }
         ],
         "description": "DFD"
@@ -1842,6 +1900,6 @@
     ],
     "diagramTop": 3,
     "reviewer": "Guillermo Vera ",
-    "threatTop": 16
+    "threatTop": 17
   }
 }
