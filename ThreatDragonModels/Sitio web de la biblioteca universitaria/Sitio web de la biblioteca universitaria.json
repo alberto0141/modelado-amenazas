@@ -2395,7 +2395,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "Límite de confianza",
+              "name": "",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
@@ -2403,7 +2403,7 @@
               "containedElements": []
             },
             "labels": [
-              "Límite de confianza"
+              ""
             ],
             "id": "c05d86d4-c448-48cd-8018-2b21c5499a6a",
             "source": {
