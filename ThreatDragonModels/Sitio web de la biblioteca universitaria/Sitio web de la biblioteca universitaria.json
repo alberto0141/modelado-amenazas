@@ -1564,8 +1564,8 @@
                 "text": "Usuarios"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1658,13 +1658,31 @@
             "data": {
               "type": "tm.Actor",
               "name": "Usuarios",
-              "description": "",
+              "description": "usuario web anonimo\nusuario con credencialesde inicio de seion validas\nusuarios con inicio de sesion no validas",
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "f24ec4f0-1e24-4e89-a04f-cef4732717de",
+                  "title": "suplantacion de identidad",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Spoofing / Spoofing",
+                  "description": "acción de amenaza destinada a acceder y utilizar las credenciales de otro usuario, como el nombre del usuario y la contraseña",
+                  "mitigation": "autenticación adecuada.\nproteger datos secretos.\nno almacenar secretos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": "1"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -1681,8 +1699,8 @@
                 "text": "Controlador web"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1775,16 +1793,47 @@
             "data": {
               "type": "tm.Process",
               "name": "Controlador web",
-              "description": "",
+              "description": "controlador de entrada que recibe las peticiones del usuario para iniciar la sesion",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "18c44bee-ca58-4fbe-8fcc-083f1c1c4254",
+                  "title": "denegacion de servicio",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service / Denegación de servicio",
+                  "description": "un atacante podria denegar el acceso a los usuarios validos, haciendo que el servidor web no este disponible o sea inutilizable temporalmente por medio del envio de multiples peticiones simultaneas",
+                  "mitigation": "se utiliza un balanceo de cargas en el servidor web.\nse mointrean las direcciones ip de los clientes y al encontrar unn posible ataque, se bloquea el acceso.\nse considera contratar un servicio de VPN para ocultar la direccion ip publica a los clientes.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": "2"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           }
         ],
@@ -1793,6 +1842,6 @@
     ],
     "diagramTop": 3,
     "reviewer": "Guillermo Vera ",
-    "threatTop": 14
+    "threatTop": 16
   }
 }
